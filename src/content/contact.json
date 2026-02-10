@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "heading": "Contact Us",
+    "subheading": "Ready to start your recovery? Reach out today — no referral needed."
+  },
+  "info": {
+    "heading": "Get in Touch",
+    "description": "Whether you're scheduling your first appointment or have questions about our services, we're here to help. Give us a call or fill out the form below and we'll get back to you promptly.",
+    "directAccess": "Wisconsin law allows direct access to physical therapists — no physician referral required to begin treatment."
+  },
+  "form": {
+    "heading": "Send Us a Message",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "reason": "Reason for Visit",
+      "message": "Tell us about your condition or questions"
+    },
+    "reasonOptions": [
+      "New Patient Appointment",
+      "Post-Surgical Rehabilitation",
+      "Sports Injury",
+      "Chronic Pain",
+      "Aquatic Therapy",
+      "Dry Needling",
+      "Hand / Wrist Therapy",
+      "Women's Health",
+      "Workers' Compensation",
+      "Insurance Question",
+      "General Question",
+      "Other"
+    ],
+    "submitText": "Send Message",
+    "disclaimer": "By submitting this form, you agree to be contacted regarding your inquiry. Your information is kept confidential and will never be shared."
+  },
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.5!2d-88.5567!3d44.0122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s909+S+Washburn+St%2C+Oshkosh%2C+WI+54904!5e0!3m2!1sen!2sus!4v1234567890"
+}

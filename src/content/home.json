@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "headline": "Get Back to Living Your Best Life",
+    "subheadline": "Personalized physical therapy and wellness care in Oshkosh, WI — where your recovery is treated with the same urgency as our own.",
+    "ctaText": "Schedule Your Appointment",
+    "ctaLink": "/contact",
+    "secondaryCtaText": "Explore Our Services",
+    "secondaryCtaLink": "/services"
+  },
+  "intro": {
+    "heading": "Why Fox Valley Physical Therapy?",
+    "text": "Since 1990, Fox Valley Physical Therapy & Wellness has been the trusted choice for rehabilitation in Winnebago County. Our 7,500 sq. ft. facility features a therapeutic pool and fully equipped gym — all designed to help you heal faster and stronger. We believe therapy is not only our profession — it's our passion.",
+    "highlights": [
+      "One-on-one personalized care in a private setting",
+      "Therapeutic pool and full gym on-site",
+      "No referral required — direct access available",
+      "Voted top private practice in Winnebago County"
+    ]
+  },
+  "servicePreview": {
+    "heading": "How We Can Help",
+    "subheading": "Comprehensive rehabilitation services tailored to your needs",
+    "services": [
+      {
+        "title": "Physical Therapy",
+        "description": "Expert treatment for injuries, post-surgical recovery, chronic pain, and more — customized to get you moving again.",
+        "icon": "Activity"
+      },
+      {
+        "title": "Aquatic Therapy",
+        "description": "Our on-site therapeutic pool provides low-impact rehabilitation that reduces stress on joints while building strength.",
+        "icon": "Waves"
+      },
+      {
+        "title": "Sports Rehabilitation",
+        "description": "Get back in the game with specialized athletic training, sports analysis, and performance conditioning.",
+        "icon": "Trophy"
+      },
+      {
+        "title": "Dry Needling",
+        "description": "Targeted trigger point therapy to relieve pain, reduce muscle tension, and restore range of motion.",
+        "icon": "Target"
+      },
+      {
+        "title": "Hand Therapy",
+        "description": "Specialized occupational therapy for hand, wrist, and upper extremity injuries including custom splinting.",
+        "icon": "Hand"
+      },
+      {
+        "title": "Women's Health",
+        "description": "Dedicated programs for pelvic floor rehabilitation, prenatal and postpartum care, and women's wellness.",
+        "icon": "Heart"
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "What Our Patients Say",
+    "items": [
+      {
+        "quote": "The team at Fox Valley PT made my recovery after knee surgery so much easier. They truly care about every patient.",
+        "author": "Sarah M.",
+        "detail": "Knee Replacement Recovery"
+      },
+      {
+        "quote": "I was amazed at how quickly I improved with aquatic therapy. The pool sessions made a huge difference in my back pain.",
+        "author": "James R.",
+        "detail": "Chronic Back Pain"
+      },
+      {
+        "quote": "After my sports injury, they got me back on the field faster than I expected. Professional, knowledgeable, and genuinely supportive.",
+        "author": "Emily T.",
+        "detail": "ACL Rehabilitation"
+      }
+    ]
+  },
+  "ctaSection": {
+    "heading": "Ready to Start Your Recovery?",
+    "text": "Take the first step toward feeling better. Contact us today to schedule an evaluation — no referral needed.",
+    "ctaText": "Contact Us Today",
+    "ctaLink": "/contact",
+    "phoneText": "Or call us at"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "clinicName": "Fox Valley Physical Therapy & Wellness",
+  "tagline": "Your Recovery Is Our Passion",
+  "phone": "(920) 235-8966",
+  "fax": "(920) 235-1526",
+  "email": "info@foxvalleyphysicaltherapy.com",
+  "address": {
+    "street": "909 S Washburn Street",
+    "city": "Oshkosh",
+    "state": "WI",
+    "zip": "54904"
+  },
+  "hours": {
+    "weekdays": "Monday – Friday: 7:00 AM – 6:00 PM",
+    "saturday": "Saturday: By Appointment",
+    "sunday": "Sunday: Closed"
+  },
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/foxvalleyphysicaltherapy",
+    "instagram": "",
+    "google": ""
+  },
+  "stats": [
+    { "number": "34+", "label": "Years in Business" },
+    { "number": "35,000+", "label": "Patients Treated" },
+    { "number": "14", "label": "Healthcare Team Members" },
+    { "number": "100+", "label": "Years of Combined Experience" }
+  ],
+  "insuranceNote": "We accept most major insurance plans, HSA/FSA, workers' compensation, and private pay. No referral required — Wisconsin law allows direct access to physical therapists."
+}

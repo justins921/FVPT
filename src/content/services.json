@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "heading": "Our Services",
+    "subheading": "Comprehensive rehabilitation and wellness services to help you recover, strengthen, and thrive."
+  },
+  "intro": {
+    "text": "At Fox Valley Physical Therapy & Wellness, we offer a full range of rehabilitation services in our 7,500 sq. ft. facility. Whether you're recovering from surgery, managing chronic pain, or looking to improve athletic performance, our experienced team has the expertise and tools to help."
+  },
+  "categories": [
+    {
+      "title": "Physical Therapy",
+      "icon": "Activity",
+      "description": "Our physical therapists use evidence-based techniques to help you recover from injuries, surgeries, and chronic conditions. Every treatment plan is customized to your specific needs and goals.",
+      "treatments": [
+        "Post-surgical rehabilitation",
+        "Orthopedic injury treatment",
+        "Manual therapy (myofascial release, trigger point therapy)",
+        "McKenzie Method treatment",
+        "Balance rehabilitation",
+        "Neurological rehabilitation",
+        "Chronic pain management"
+      ]
+    },
+    {
+      "title": "Aquatic Therapy",
+      "icon": "Waves",
+      "description": "Our on-site therapeutic pool provides a low-impact environment for rehabilitation. The buoyancy of water reduces stress on joints while allowing you to build strength, improve range of motion, and accelerate recovery.",
+      "treatments": [
+        "Joint replacement recovery",
+        "Arthritis management",
+        "Back and neck pain relief",
+        "Balance and gait training",
+        "Post-surgical rehabilitation",
+        "Chronic pain management"
+      ]
+    },
+    {
+      "title": "Occupational Therapy & Hand Therapy",
+      "icon": "Hand",
+      "description": "Our occupational therapy team specializes in upper extremity rehabilitation, helping you regain the hand and arm function needed for daily life and work activities.",
+      "treatments": [
+        "Hand and wrist injury rehabilitation",
+        "Custom splinting and orthotics",
+        "Upper extremity strengthening",
+        "Fine motor skill recovery",
+        "Work-related injury treatment",
+        "Ergonomic assessment and training"
+      ]
+    },
+    {
+      "title": "Sports Medicine & Athletic Training",
+      "icon": "Trophy",
+      "description": "Our athletic training team combines injury rehabilitation with performance conditioning to get athletes back in the game safely and at peak performance.",
+      "treatments": [
+        "Sports injury rehabilitation",
+        "ACL and knee injury recovery",
+        "Ankle and foot injury treatment",
+        "Sports performance analysis",
+        "Return-to-sport conditioning",
+        "Injury prevention programs"
+      ]
+    },
+    {
+      "title": "Dry Needling",
+      "icon": "Target",
+      "description": "Performed by our certified practitioners, dry needling targets trigger points in muscles to relieve pain, reduce tension, and restore range of motion. This technique is especially effective for chronic muscle tightness and pain.",
+      "treatments": [
+        "Trigger point release",
+        "Chronic muscle pain relief",
+        "Headache and TMJ treatment",
+        "Neck and back pain reduction",
+        "Improved range of motion",
+        "Complementary to manual therapy"
+      ]
+    },
+    {
+      "title": "Women's Health",
+      "icon": "Heart",
+      "description": "Our women's health programs address the unique rehabilitation needs of women, from pelvic floor therapy to pre- and postpartum care.",
+      "treatments": [
+        "Pelvic floor rehabilitation",
+        "Prenatal physical therapy",
+        "Postpartum recovery",
+        "Incontinence treatment",
+        "Core strengthening programs",
+        "Women's wellness education"
+      ]
+    },
+    {
+      "title": "Industrial & Workplace Rehabilitation",
+      "icon": "HardHat",
+      "description": "We help workers recover from occupational injuries and return to their jobs safely through targeted conditioning and ergonomic solutions.",
+      "treatments": [
+        "Work injury rehabilitation",
+        "Functional capacity evaluations",
+        "Work conditioning programs",
+        "Ergonomic training",
+        "Workers' compensation case management",
+        "Return-to-work planning"
+      ]
+    }
+  ],
+  "conditions": {
+    "heading": "Conditions We Treat",
+    "items": [
+      "Neck & back pain",
+      "Shoulder injuries",
+      "Knee pain & injuries",
+      "Hand & wrist injuries",
+      "Ankle sprains",
+      "Plantar fasciitis",
+      "Hip & thigh strains",
+      "Headaches & migraines",
+      "TMJ disorders",
+      "Post-surgical recovery",
+      "Sacroiliac disorders",
+      "Thoracic spine issues",
+      "Balance disorders",
+      "Scoliosis",
+      "Fibromyalgia",
+      "Arthritis",
+      "Neurological conditions"
+    ]
+  },
+  "ctaSection": {
+    "heading": "Not Sure Which Service You Need?",
+    "text": "Contact us and we'll help determine the best treatment approach for your condition. Remember — no referral is required.",
+    "ctaText": "Get in Touch",
+    "ctaLink": "/contact"
+  }
+}

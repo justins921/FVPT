@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "heading": "About Our Clinic",
+    "subheading": "Serving the Fox Valley community with compassionate, expert care since 1990."
+  },
+  "story": {
+    "heading": "Our Story",
+    "paragraphs": [
+      "Fox Valley Physical Therapy & Wellness was established in 1990 by Steve Sobojinski, Regina Sobojinski, and Patti Ahrens with a simple mission: to provide the highest quality rehabilitation care in a personal, private setting.",
+      "Over three decades later, that mission remains at the heart of everything we do. Our 7,500 square-foot facility — featuring a therapeutic pool and fully equipped gym — has helped over 35,000 patients recover from injuries, surgeries, and chronic conditions.",
+      "We treat your injuries as if they were our own. That philosophy drives us to stay current with the latest evidence-based techniques while never losing sight of the personal touch that makes our clinic special."
+    ]
+  },
+  "values": {
+    "heading": "What Sets Us Apart",
+    "items": [
+      {
+        "title": "Personalized Care",
+        "description": "Every treatment plan is tailored to your specific needs, goals, and lifestyle. You're never just a number here."
+      },
+      {
+        "title": "Expert Team",
+        "description": "Our 14-member team brings over 100 years of combined experience across physical therapy, occupational therapy, and athletic training."
+      },
+      {
+        "title": "Advanced Facilities",
+        "description": "Our therapeutic pool and fully equipped gym provide treatment options that most clinics simply can't offer."
+      },
+      {
+        "title": "Community Trust",
+        "description": "Voted the top private practice in Winnebago County, we've earned our reputation through decades of results."
+      }
+    ]
+  },
+  "team": {
+    "heading": "Meet Our Team",
+    "subheading": "Dedicated professionals committed to your recovery",
+    "members": [
+      {
+        "name": "Steve Sobojinski",
+        "credentials": "OTR, CSCS",
+        "role": "Co-Founder & Occupational Therapist",
+        "bio": "Steve co-founded the clinic in 1990 and specializes in upper extremity rehabilitation. His expertise in occupational therapy and strength conditioning helps patients regain full function after hand, wrist, and arm injuries.",
+        "specialties": ["Upper Extremity Rehabilitation", "Custom Splinting", "Strength & Conditioning"]
+      },
+      {
+        "name": "Regina Sobojinski",
+        "credentials": "PT",
+        "role": "Co-Founder & Physical Therapist",
+        "bio": "Regina has been a cornerstone of Fox Valley PT since its founding. Her decades of clinical experience and compassionate approach have helped thousands of patients achieve their rehabilitation goals.",
+        "specialties": ["Physical Therapy", "Patient-Centered Rehabilitation"]
+      },
+      {
+        "name": "Dr. Jordan Kasper",
+        "credentials": "DPT",
+        "role": "Physical Therapist",
+        "bio": "Dr. Kasper brings a modern, evidence-based approach to physical therapy, helping patients recover from a wide range of orthopedic and musculoskeletal conditions.",
+        "specialties": ["Orthopedic Rehabilitation", "Evidence-Based Practice"]
+      },
+      {
+        "name": "Dr. Stephanie Meyer",
+        "credentials": "DPT, CMTPT",
+        "role": "Physical Therapist",
+        "bio": "Dr. Meyer is certified in trigger point dry needling, offering advanced pain relief techniques alongside traditional physical therapy approaches.",
+        "specialties": ["Dry Needling", "Trigger Point Therapy", "Manual Therapy"]
+      },
+      {
+        "name": "Dr. Courtney Disterhaft",
+        "credentials": "DPT",
+        "role": "Physical Therapist",
+        "bio": "Dr. Disterhaft specializes in pediatric therapy, vestibular rehabilitation, and neurological conditions, providing expert care for patients of all ages.",
+        "specialties": ["Pediatrics", "Vestibular Rehabilitation", "Neurology"]
+      },
+      {
+        "name": "Dr. Jensen Pearson",
+        "credentials": "DPT",
+        "role": "Physical Therapist",
+        "bio": "Dr. Pearson focuses on sports medicine, pediatric care, and vestibular rehabilitation, helping athletes and young patients get back to their active lifestyles.",
+        "specialties": ["Sports Medicine", "Pediatrics", "Vestibular Rehabilitation"]
+      },
+      {
+        "name": "Dr. Bridget Thiel",
+        "credentials": "DPT",
+        "role": "Physical Therapist",
+        "bio": "Dr. Thiel brings expertise in spinal disorders and chronic pain management, helping patients find lasting relief through targeted therapy programs.",
+        "specialties": ["Spinal Disorders", "Chronic Pain Management"]
+      },
+      {
+        "name": "Darrick Lang",
+        "credentials": "PTA",
+        "role": "Physical Therapist Assistant",
+        "bio": "With the clinic since 2005, Darrick specializes in wound care, upper extremity rehabilitation, and custom splinting.",
+        "specialties": ["Wound Care", "Upper Extremity", "Custom Splinting"]
+      },
+      {
+        "name": "Courtney Baumann",
+        "credentials": "PTA",
+        "role": "Physical Therapist Assistant",
+        "bio": "Courtney has been a valued member of our team since 2015, providing hands-on patient care and rehabilitation support.",
+        "specialties": ["Patient Rehabilitation", "Hands-On Care"]
+      },
+      {
+        "name": "Deborah Tomasi",
+        "credentials": "PTA",
+        "role": "Physical Therapist Assistant",
+        "bio": "Deborah focuses on functional fitness and healthy aging, helping patients maintain their independence and quality of life.",
+        "specialties": ["Functional Fitness", "Healthy Aging"]
+      },
+      {
+        "name": "Josie Arneson",
+        "credentials": "PTA",
+        "role": "Physical Therapist Assistant",
+        "bio": "With the clinic since 2016, Josie specializes in aquatic therapy, orthopedics, and pediatrics, leveraging our therapeutic pool for effective treatment.",
+        "specialties": ["Aquatic Therapy", "Orthopedics", "Pediatrics"]
+      },
+      {
+        "name": "Lucie Nezbed",
+        "credentials": "PTA",
+        "role": "Physical Therapist Assistant",
+        "bio": "Lucie brings expertise in orthopedics and pediatrics, providing compassionate care for patients recovering from musculoskeletal injuries.",
+        "specialties": ["Orthopedics", "Pediatrics"]
+      },
+      {
+        "name": "Darren Hanusa",
+        "credentials": "LAT, CSCS",
+        "role": "Athletic Trainer",
+        "bio": "Darren has been with the clinic since 1998 and specializes in knee and ankle injury rehabilitation, sports conditioning, and athletic performance.",
+        "specialties": ["Knee & Ankle Injuries", "Sports Conditioning", "Athletic Performance"]
+      },
+      {
+        "name": "Paula Clark",
+        "credentials": "",
+        "role": "Clinic Manager",
+        "bio": "Paula has managed clinic operations and billing since 1993. She's your go-to resource for insurance questions and appointment scheduling.",
+        "specialties": ["Insurance & Billing", "Clinic Operations"]
+      }
+    ]
+  }
+}
