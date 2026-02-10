@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, CheckCircle2, Droplets, Dumbbell, Zap, Hand, Heart, Trophy } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
-import Loading from '../components/Loading';
+import home from '../content/home.json';
+import general from '../content/general.json';
 
 const iconMap = { Activity: Dumbbell, Waves: Droplets, Trophy, Target: Zap, Hand, Heart };
 
@@ -16,11 +16,6 @@ function SectionLabel({ text }) {
 }
 
 export default function Home() {
-  const { data: home, loading: l1 } = useContent('home');
-  const { data: general, loading: l2 } = useContent('general');
-
-  if (l1 || l2 || !home || !general) return <Loading />;
-
   return (
     <>
       {/* Hero */}
@@ -66,14 +61,14 @@ export default function Home() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src={general.images?.treatment1}
+                  src={general.images.treatment1}
                   alt="Physical therapy session"
                   className="w-full h-[480px] object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 flex items-center gap-3">
                 <div className="flex -space-x-2">
-                  {[general.images?.treatment2, general.images?.treatment3, general.images?.treatment4].map((src, i) => (
+                  {[general.images.treatment2, general.images.treatment3, general.images.treatment4].map((src, i) => (
                     <img key={i} src={src} alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
                   ))}
                 </div>
@@ -92,8 +87,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="grid grid-cols-2 gap-4">
-              <img src={general.images?.facility1} alt="Clinic facility" className="rounded-2xl h-64 w-full object-cover" />
-              <img src={general.images?.teamPhoto} alt="Our team" className="rounded-2xl h-64 w-full object-cover mt-8" />
+              <img src={general.images.facility1} alt="Clinic facility" className="rounded-2xl h-64 w-full object-cover" />
+              <img src={general.images.teamPhoto} alt="Our team" className="rounded-2xl h-64 w-full object-cover mt-8" />
             </div>
             <div>
               <SectionLabel text="About Us" />

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
+import general from '../content/general.json';
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -13,18 +13,13 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const { data: general } = useContent('general');
 
   return (
     <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex-shrink-0">
-            {general?.logo ? (
-              <img src={general.logo} alt={general?.clinicName || 'FVPT'} className="h-14" />
-            ) : (
-              <span className="text-xl font-bold text-gray-900">FVPT</span>
-            )}
+            <img src={general.logo} alt={general.clinicName} className="h-14" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -44,15 +39,13 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-5">
-            {general?.phone && (
-              <a
-                href={`tel:${general.phone.replace(/[^\d]/g, '')}`}
-                className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5"
-              >
-                <Phone size={14} />
-                {general.phone}
-              </a>
-            )}
+            <a
+              href={`tel:${general.phone.replace(/[^\d]/g, '')}`}
+              className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1.5"
+            >
+              <Phone size={14} />
+              {general.phone}
+            </a>
             <Link
               to="/contact"
               className="border-2 border-gray-900 text-gray-900 px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-900 hover:text-white transition-colors"

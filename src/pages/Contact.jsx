@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
-import Loading from '../components/Loading';
+import contact from '../content/contact.json';
+import general from '../content/general.json';
 
 function SectionLabel({ text }) {
   return (
@@ -14,16 +14,11 @@ function SectionLabel({ text }) {
 }
 
 export default function Contact() {
-  const { data: contact, loading: l1 } = useContent('contact');
-  const { data: general, loading: l2 } = useContent('general');
-
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', reason: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
   const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
-
-  if (l1 || l2 || !contact || !general) return <Loading />;
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle2 } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
-import Loading from '../components/Loading';
+import about from '../content/about.json';
+import general from '../content/general.json';
 
 function SectionLabel({ text }) {
   return (
@@ -14,11 +14,6 @@ function SectionLabel({ text }) {
 }
 
 export default function About() {
-  const { data: about, loading: l1 } = useContent('about');
-  const { data: general, loading: l2 } = useContent('general');
-
-  if (l1 || l2 || !about || !general) return <Loading />;
-
   return (
     <>
       {/* Hero */}
@@ -27,7 +22,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src={general.images?.teamPhoto}
+                src={general.images.teamPhoto}
                 alt="Our team"
                 className="w-full h-[400px] object-cover"
               />
@@ -59,9 +54,9 @@ export default function About() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={general.images?.facility1} alt="Facility" className="rounded-2xl h-52 w-full object-cover" />
-              <img src={general.images?.aquatic1} alt="Aquatic therapy" className="rounded-2xl h-52 w-full object-cover mt-8" />
-              <img src={general.images?.exterior} alt="Exterior" className="rounded-2xl h-52 w-full object-cover col-span-2" />
+              <img src={general.images.facility1} alt="Facility" className="rounded-2xl h-52 w-full object-cover" />
+              <img src={general.images.aquatic1} alt="Aquatic therapy" className="rounded-2xl h-52 w-full object-cover mt-8" />
+              <img src={general.images.exterior} alt="Exterior" className="rounded-2xl h-52 w-full object-cover col-span-2" />
             </div>
           </div>
         </div>

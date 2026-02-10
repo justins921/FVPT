@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Dumbbell, Droplets, Trophy, Zap, Hand, Heart, HardHat } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
-import Loading from '../components/Loading';
+import services from '../content/services.json';
+import general from '../content/general.json';
 
 const iconMap = { Activity: Dumbbell, Waves: Droplets, Trophy, Target: Zap, Hand, Heart, HardHat };
 
@@ -15,22 +15,17 @@ function SectionLabel({ text }) {
   );
 }
 
+const serviceImages = [
+  general.images.treatment1,
+  general.images.aquatic1,
+  general.images.treatment2,
+  general.images.treatment3,
+  general.images.facility1,
+  general.images.treatment4,
+  general.images.facility2,
+];
+
 export default function Services() {
-  const { data: services, loading: l1 } = useContent('services');
-  const { data: general, loading: l2 } = useContent('general');
-
-  if (l1 || l2 || !services || !general) return <Loading />;
-
-  const serviceImages = [
-    general.images?.treatment1,
-    general.images?.aquatic1,
-    general.images?.treatment2,
-    general.images?.treatment3,
-    general.images?.facility1,
-    general.images?.treatment4,
-    general.images?.facility2,
-  ];
-
   return (
     <>
       {/* Hero */}

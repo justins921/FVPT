@@ -1,21 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
+import general from '../content/general.json';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const { data: general } = useContent('general');
-
-  if (!general) return null;
 
   return (
     <footer className="bg-gray-950 text-gray-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            {general.logo && (
-              <img src={general.logo} alt={general.clinicName} className="h-12 mb-4 brightness-0 invert" />
-            )}
+            <img src={general.logo} alt={general.clinicName} className="h-12 mb-4 brightness-0 invert" />
             <p className="text-sm leading-relaxed">
               Serving the Oshkosh and Fox Valley community with personalized rehabilitation care since 1990.
             </p>
