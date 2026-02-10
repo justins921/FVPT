@@ -10,11 +10,16 @@ import {
   CheckCircle2,
   ArrowRight,
 } from 'lucide-react';
-import services from '../content/services.json';
+import { useContent } from '../hooks/useContent';
+import Loading from '../components/Loading';
 
 const iconMap = { Activity, Waves, Trophy, Target, Hand, Heart, HardHat };
 
 export default function Services() {
+  const { data: services, loading } = useContent('services');
+
+  if (loading || !services) return <Loading />;
+
   return (
     <>
       {/* Hero */}

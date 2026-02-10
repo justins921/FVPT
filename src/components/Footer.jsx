@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import general from '../content/general.json';
+import { useContent } from '../hooks/useContent';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { data: general } = useContent('general');
+
+  if (!general) return null;
 
   return (
     <footer className="bg-gray-900 text-gray-300">

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
-import general from '../content/general.json';
+import { useContent } from '../hooks/useContent';
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -13,6 +13,9 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { data: general } = useContent('general');
+
+  if (!general) return null;
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">

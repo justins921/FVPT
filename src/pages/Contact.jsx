@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
-import contact from '../content/contact.json';
-import general from '../content/general.json';
+import { useContent } from '../hooks/useContent';
+import Loading from '../components/Loading';
 
 export default function Contact() {
+  const { data: contact, loading: l1 } = useContent('contact');
+  const { data: general, loading: l2 } = useContent('general');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,9 +22,10 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In production, connect this to a form service (Formspree, Netlify Forms, etc.)
     setSubmitted(true);
   };
+
+  if (l1 || l2 || !contact || !general) return <Loading />;
 
   return (
     <>
@@ -134,8 +138,8 @@ export default function Contact() {
                       Message Sent!
                     </h3>
                     <p className="text-gray-600">
-                      Thank you for reaching out. We'll get back to you as soon
-                      as possible.
+                      Thank you for reaching out. We&apos;ll get back to you as
+                      soon as possible.
                     </p>
                   </div>
                 ) : (

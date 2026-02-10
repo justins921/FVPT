@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Users, Award, Building, HeartHandshake } from 'lucide-react';
-import about from '../content/about.json';
+import { useContent } from '../hooks/useContent';
+import Loading from '../components/Loading';
 
 const valueIcons = [HeartHandshake, Users, Building, Award];
 
 export default function About() {
+  const { data: about, loading } = useContent('about');
+
+  if (loading || !about) return <Loading />;
+
   return (
     <>
       {/* Hero */}

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import AdminPage from './admin/AdminPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
