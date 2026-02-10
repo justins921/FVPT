@@ -9,10 +9,12 @@
     "build": "vite build",
     "start": "node server/index.js",
     "create-password": "node server/create-password.js",
+    "seed": "node scripts/seed.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
