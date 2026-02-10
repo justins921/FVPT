@@ -1,89 +1,89 @@
 import { Link } from 'react-router-dom';
-import {
-  Activity,
-  Waves,
-  Trophy,
-  Target,
-  Hand,
-  Heart,
-  HardHat,
-  CheckCircle2,
-  ArrowRight,
-} from 'lucide-react';
+import { ArrowRight, CheckCircle2, Dumbbell, Droplets, Trophy, Zap, Hand, Heart, HardHat } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 import Loading from '../components/Loading';
 
-const iconMap = { Activity, Waves, Trophy, Target, Hand, Heart, HardHat };
+const iconMap = { Activity: Dumbbell, Waves: Droplets, Trophy, Target: Zap, Hand, Heart, HardHat };
+
+function SectionLabel({ text }) {
+  return (
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-brand text-lg">+</span>
+      <span className="w-8 h-px bg-brand" />
+      <span className="text-brand text-sm font-semibold">{text}</span>
+    </div>
+  );
+}
 
 export default function Services() {
-  const { data: services, loading } = useContent('services');
+  const { data: services, loading: l1 } = useContent('services');
+  const { data: general, loading: l2 } = useContent('general');
 
-  if (loading || !services) return <Loading />;
+  if (l1 || l2 || !services || !general) return <Loading />;
+
+  const serviceImages = [
+    general.images?.treatment1,
+    general.images?.aquatic1,
+    general.images?.treatment2,
+    general.images?.treatment3,
+    general.images?.facility1,
+    general.images?.treatment4,
+    general.images?.facility2,
+  ];
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-teal-800 to-teal-900 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {services.hero.heading}
-          </h1>
-          <p className="text-lg text-teal-100 max-w-2xl mx-auto">
-            {services.hero.subheading}
-          </p>
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <SectionLabel text="Our Services" />
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              Experienced in Different Types of{' '}
+              <span className="text-brand">Therapy</span>
+            </h1>
+            <p className="text-gray-500 text-lg leading-relaxed">
+              {services.intro.text}
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-gray-600 text-center leading-relaxed">
-            {services.intro.text}
-          </p>
-        </div>
-      </section>
+      {/* Services */}
+      <section className="bg-gray-50 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          {services.categories.map((cat, i) => {
+            const Icon = iconMap[cat.icon] || Dumbbell;
+            const isReversed = i % 2 !== 0;
+            const img = serviceImages[i % serviceImages.length];
 
-      {/* Service Categories */}
-      <section className="pb-16 md:pb-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {services.categories.map((category, i) => {
-            const Icon = iconMap[category.icon] || Activity;
-            const isEven = i % 2 === 0;
             return (
               <div
                 key={i}
-                id={category.title.toLowerCase().replace(/\s+/g, '-')}
-                className={`rounded-2xl overflow-hidden border border-gray-100 shadow-sm ${
-                  isEven ? 'bg-white' : 'bg-gray-50'
-                }`}
+                id={cat.title.toLowerCase().replace(/\s+/g, '-')}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:direction-rtl' : ''}`}
               >
-                <div className="md:flex">
-                  <div className="md:w-1/3 bg-gradient-to-br from-teal-700 to-teal-800 p-8 flex flex-col justify-center">
-                    <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                      <Icon size={28} className="text-white" />
+                <div className={`${isReversed ? 'lg:order-2' : ''}`}>
+                  {img && (
+                    <img src={img} alt={cat.title} className="rounded-2xl w-full h-80 object-cover" />
+                  )}
+                </div>
+                <div className={`${isReversed ? 'lg:order-1' : ''}`}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center">
+                      <Icon size={20} className="text-brand" />
                     </div>
-                    <h2 className="text-2xl font-bold text-white">
-                      {category.title}
-                    </h2>
+                    <h2 className="text-2xl font-bold text-gray-900">{cat.title}</h2>
                   </div>
-                  <div className="md:w-2/3 p-8">
-                    <p className="text-gray-600 leading-relaxed mb-6">
-                      {category.description}
-                    </p>
-                    <ul className="grid sm:grid-cols-2 gap-2">
-                      {category.treatments.map((treatment, j) => (
-                        <li key={j} className="flex items-start gap-2">
-                          <CheckCircle2
-                            size={16}
-                            className="text-teal-600 mt-1 shrink-0"
-                          />
-                          <span className="text-sm text-gray-700">
-                            {treatment}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <p className="text-gray-500 leading-relaxed mb-6">{cat.description}</p>
+                  <ul className="grid sm:grid-cols-2 gap-2">
+                    {cat.treatments.map((t, j) => (
+                      <li key={j} className="flex items-start gap-2">
+                        <CheckCircle2 size={15} className="text-brand mt-1 shrink-0" />
+                        <span className="text-sm text-gray-600">{t}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             );
@@ -92,18 +92,16 @@ export default function Services() {
       </section>
 
       {/* Conditions */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">
-            {services.conditions.heading}
-          </h2>
+          <div className="text-center mb-12">
+            <SectionLabel text="Conditions" />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{services.conditions.heading}</h2>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {services.conditions.items.map((condition, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-lg px-4 py-3 text-sm text-gray-700 font-medium border border-gray-100 text-center"
-              >
-                {condition}
+            {services.conditions.items.map((c, i) => (
+              <div key={i} className="bg-gray-50 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium text-center border border-gray-100">
+                {c}
               </div>
             ))}
           </div>
@@ -111,20 +109,15 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-teal-700 to-teal-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {services.ctaSection.heading}
-          </h2>
-          <p className="text-lg text-teal-100 mb-8 max-w-2xl mx-auto">
-            {services.ctaSection.text}
-          </p>
+      <section className="border-t border-gray-100 py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{services.ctaSection.heading}</h2>
+          <p className="text-gray-500 mb-8 text-lg">{services.ctaSection.text}</p>
           <Link
             to={services.ctaSection.ctaLink}
-            className="inline-flex items-center bg-white text-teal-800 px-8 py-4 rounded-lg font-bold text-lg hover:bg-teal-50 transition-colors shadow-lg"
+            className="inline-flex items-center bg-brand text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-brand-dark transition-colors gap-2"
           >
-            {services.ctaSection.ctaText}
-            <ArrowRight size={20} className="ml-2" />
+            {services.ctaSection.ctaText} <ArrowRight size={18} />
           </Link>
         </div>
       </section>

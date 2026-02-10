@@ -3,234 +3,125 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 import Loading from '../components/Loading';
 
+function SectionLabel({ text }) {
+  return (
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-brand text-lg">+</span>
+      <span className="w-8 h-px bg-brand" />
+      <span className="text-brand text-sm font-semibold">{text}</span>
+    </div>
+  );
+}
+
 export default function Contact() {
   const { data: contact, loading: l1 } = useContent('contact');
   const { data: general, loading: l2 } = useContent('general');
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    reason: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', reason: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
 
   if (l1 || l2 || !contact || !general) return <Loading />;
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-teal-800 to-teal-900 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {contact.hero.heading}
-          </h1>
-          <p className="text-lg text-teal-100 max-w-2xl mx-auto">
-            {contact.hero.subheading}
-          </p>
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <SectionLabel text="Contact" />
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              {contact.hero.heading}
+            </h1>
+            <p className="text-gray-500 text-lg">{contact.hero.subheading}</p>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      {/* Content */}
+      <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
-            {/* Contact Info */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {contact.info.heading}
-              </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                {contact.info.description}
-              </p>
-              <div className="bg-teal-50 rounded-xl p-4 mb-8 text-sm text-teal-800 font-medium">
+            {/* Info */}
+            <div className="lg:col-span-2 space-y-6">
+              <p className="text-gray-500 leading-relaxed">{contact.info.description}</p>
+
+              <div className="bg-brand-light/50 rounded-xl p-4 text-sm text-brand-dark font-medium border border-brand/10">
                 {contact.info.directAccess}
               </div>
 
-              <div className="space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0">
-                    <MapPin size={20} className="text-teal-700" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Address</p>
-                    <p className="text-gray-600 text-sm">
-                      {general.address.street}
-                      <br />
-                      {general.address.city}, {general.address.state}{' '}
-                      {general.address.zip}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0">
-                    <Phone size={20} className="text-teal-700" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Phone</p>
-                    <a
-                      href={`tel:${general.phone.replace(/[^\d]/g, '')}`}
-                      className="text-teal-700 hover:text-teal-800 text-sm"
-                    >
-                      {general.phone}
-                    </a>
-                    <p className="text-gray-500 text-xs mt-0.5">
-                      Fax: {general.fax}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0">
-                    <Mail size={20} className="text-teal-700" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Email</p>
-                    <a
-                      href={`mailto:${general.email}`}
-                      className="text-teal-700 hover:text-teal-800 text-sm"
-                    >
-                      {general.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0">
-                    <Clock size={20} className="text-teal-700" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Hours</p>
-                    <div className="text-gray-600 text-sm space-y-0.5">
-                      <p>{general.hours.weekdays}</p>
-                      <p>{general.hours.saturday}</p>
-                      <p>{general.hours.sunday}</p>
+              <div className="space-y-5 pt-2">
+                {[
+                  { icon: MapPin, label: 'Address', value: <>{general.address.street}<br />{general.address.city}, {general.address.state} {general.address.zip}</> },
+                  { icon: Phone, label: 'Phone', value: <a href={`tel:${general.phone.replace(/[^\d]/g, '')}`} className="text-brand hover:text-brand-dark">{general.phone}</a> },
+                  { icon: Mail, label: 'Email', value: <a href={`mailto:${general.email}`} className="text-brand hover:text-brand-dark">{general.email}</a> },
+                  { icon: Clock, label: 'Hours', value: <div className="space-y-0.5"><p>{general.hours.weekdays}</p><p>{general.hours.saturday}</p><p>{general.hours.sunday}</p></div> },
+                ].map(({ icon: Icon, label, value }, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center shrink-0">
+                      <Icon size={18} className="text-brand" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">{label}</p>
+                      <div className="text-gray-500 text-sm">{value}</div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  {contact.form.heading}
-                </h2>
+              <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+                <h2 className="text-xl font-bold text-gray-900 mb-6">{contact.form.heading}</h2>
 
                 {submitted ? (
-                  <div className="text-center py-12">
-                    <CheckCircle
-                      size={48}
-                      className="text-teal-600 mx-auto mb-4"
-                    />
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      Message Sent!
-                    </h3>
-                    <p className="text-gray-600">
-                      Thank you for reaching out. We&apos;ll get back to you as
-                      soon as possible.
-                    </p>
+                  <div className="text-center py-16">
+                    <CheckCircle size={48} className="text-brand mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                    <p className="text-gray-500">Thank you for reaching out. We&apos;ll get back to you soon.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          {contact.form.fields.name} *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors bg-white"
-                        />
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{contact.form.fields.name} *</label>
+                        <input type="text" name="name" required value={formData.name} onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand/20 focus:border-brand outline-none bg-gray-50" />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          {contact.form.fields.email} *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors bg-white"
-                        />
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{contact.form.fields.email} *</label>
+                        <input type="email" name="email" required value={formData.email} onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand/20 focus:border-brand outline-none bg-gray-50" />
                       </div>
                     </div>
-
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          {contact.form.fields.phone}
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors bg-white"
-                        />
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{contact.form.fields.phone}</label>
+                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand/20 focus:border-brand outline-none bg-gray-50" />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          {contact.form.fields.reason}
-                        </label>
-                        <select
-                          name="reason"
-                          value={formData.reason}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors bg-white"
-                        >
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{contact.form.fields.reason}</label>
+                        <select name="reason" value={formData.reason} onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand/20 focus:border-brand outline-none bg-gray-50">
                           <option value="">Select a reason...</option>
-                          {contact.form.reasonOptions.map((option, i) => (
-                            <option key={i} value={option}>
-                              {option}
-                            </option>
-                          ))}
+                          {contact.form.reasonOptions.map((opt, i) => <option key={i} value={opt}>{opt}</option>)}
                         </select>
                       </div>
                     </div>
-
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        {contact.form.fields.message} *
-                      </label>
-                      <textarea
-                        name="message"
-                        required
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-colors resize-y bg-white"
-                      />
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">{contact.form.fields.message} *</label>
+                      <textarea name="message" required rows={5} value={formData.message} onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand/20 focus:border-brand outline-none resize-y bg-gray-50" />
                     </div>
-
-                    <button
-                      type="submit"
-                      className="w-full sm:w-auto bg-teal-700 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-teal-800 transition-colors flex items-center justify-center gap-2"
-                    >
-                      <Send size={18} />
-                      {contact.form.submitText}
+                    <button type="submit"
+                      className="bg-brand text-white px-8 py-3.5 rounded-full font-semibold hover:bg-brand-dark transition-colors flex items-center gap-2">
+                      <Send size={16} /> {contact.form.submitText}
                     </button>
-
-                    <p className="text-xs text-gray-500">
-                      {contact.form.disclaimer}
-                    </p>
+                    <p className="text-xs text-gray-400">{contact.form.disclaimer}</p>
                   </form>
                 )}
               </div>
@@ -240,7 +131,7 @@ export default function Contact() {
       </section>
 
       {/* Map */}
-      <section className="bg-gray-100">
+      <section>
         <iframe
           title="Fox Valley Physical Therapy Location"
           src={contact.mapEmbedUrl}
@@ -250,7 +141,6 @@ export default function Contact() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="grayscale hover:grayscale-0 transition-all duration-500"
         />
       </section>
     </>
