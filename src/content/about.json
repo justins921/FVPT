@@ -69,28 +69,12 @@
         "specialties": ["Dry Needling", "Trigger Point Therapy", "Manual Therapy"]
       },
       {
-        "name": "Dr. Courtney Disterhaft",
-        "credentials": "DPT",
-        "role": "Physical Therapist",
-        "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/65d4ba566711dec1f68f3c16_Courtney%20Disterhaft.png",
-        "bio": "Dr. Disterhaft specializes in pediatric therapy, vestibular rehabilitation, and neurological conditions, providing expert care for patients of all ages.",
-        "specialties": ["Pediatrics", "Vestibular Rehabilitation", "Neurology"]
-      },
-      {
-        "name": "Dr. Jensen Pearson",
-        "credentials": "DPT",
-        "role": "Physical Therapist",
-        "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/654d0cf8651c9e76eac4e040_imagejpeg_0%20copy%202.jpeg",
-        "bio": "Dr. Pearson focuses on sports medicine, pediatric care, and vestibular rehabilitation, helping athletes and young patients get back to their active lifestyles.",
-        "specialties": ["Sports Medicine", "Pediatrics", "Vestibular Rehabilitation"]
-      },
-      {
-        "name": "Dr. Bridget Thiel",
-        "credentials": "DPT",
-        "role": "Physical Therapist",
+        "name": "Alexa Rodriguez",
+        "credentials": "BUAHCA",
+        "role": "Healthcare Administrator",
         "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/654d0e259136f45e5d58f645_Resized_20231107_084553%20copy.jpeg",
-        "bio": "Dr. Thiel brings expertise in spinal disorders and chronic pain management, helping patients find lasting relief through targeted therapy programs.",
-        "specialties": ["Spinal Disorders", "Chronic Pain Management"]
+        "bio": "Alexa holds a Bachelor's degree in Healthcare Administration from Marian University. Originally from Richmond, Illinois, she brings a passion for serving the healthcare community and keeping clinic operations running smoothly.",
+        "specialties": ["Healthcare Administration", "Clinic Operations"]
       },
       {
         "name": "Darrick Lang",
@@ -99,38 +83,6 @@
         "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/646b9166e5d96324f2a76b23_Darrick.png",
         "bio": "With the clinic since 2005, Darrick specializes in wound care, upper extremity rehabilitation, and custom splinting.",
         "specialties": ["Wound Care", "Upper Extremity", "Custom Splinting"]
-      },
-      {
-        "name": "Courtney Baumann",
-        "credentials": "PTA",
-        "role": "Physical Therapist Assistant",
-        "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/646b9166e5d96324f2a76b24_Courtney.png",
-        "bio": "Courtney has been a valued member of our team since 2015, providing hands-on patient care and rehabilitation support.",
-        "specialties": ["Patient Rehabilitation", "Hands-On Care"]
-      },
-      {
-        "name": "Deborah Tomasi",
-        "credentials": "PTA",
-        "role": "Physical Therapist Assistant",
-        "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/65b078fa82aa5c7c5a56cae2_Debbie.png",
-        "bio": "Deborah focuses on functional fitness and healthy aging, helping patients maintain their independence and quality of life.",
-        "specialties": ["Functional Fitness", "Healthy Aging"]
-      },
-      {
-        "name": "Josie Arneson",
-        "credentials": "PTA",
-        "role": "Physical Therapist Assistant",
-        "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/646b9166e5d96324f2a76b1c_Josie.png",
-        "bio": "With the clinic since 2016, Josie specializes in aquatic therapy, orthopedics, and pediatrics, leveraging our therapeutic pool for effective treatment.",
-        "specialties": ["Aquatic Therapy", "Orthopedics", "Pediatrics"]
-      },
-      {
-        "name": "Lucie Nezbed",
-        "credentials": "PTA",
-        "role": "Physical Therapist Assistant",
-        "photo": "https://cdn.prod.website-files.com/646b9166e5d96324f2a76af5/646b9166e5d96324f2a76b25_Lucie.png",
-        "bio": "Lucie brings expertise in orthopedics and pediatrics, providing compassionate care for patients recovering from musculoskeletal injuries.",
-        "specialties": ["Orthopedics", "Pediatrics"]
       },
       {
         "name": "Darren Hanusa",
