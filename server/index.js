@@ -62,7 +62,12 @@ app.get('/api/auth/verify', authMiddleware, (_req, res) => {
   res.json({ valid: true });
 });
 
-// --- Content API (Supabase-backed) ---
+// --- Content API (Supabase-backed, with JSON fallback) ---
+
+function readLocalJson(section) {
+  const filePath = path.join(__dirname, '..', 'src', 'content', `${section}.json`);
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
 
 app.get('/api/content/:section', async (req, res) => {
   const { section } = req.params;
@@ -73,8 +78,12 @@ app.get('/api/content/:section', async (req, res) => {
     const data = await getContent(section);
     res.json(data);
   } catch (err) {
-    console.error(`Failed to read ${section}:`, err);
-    res.status(500).json({ error: 'Failed to read content' });
+    console.warn(`Supabase read failed for ${section}, falling back to JSON:`, err.message);
+    try {
+      res.json(readLocalJson(section));
+    } catch {
+      res.status(500).json({ error: 'Failed to read content' });
+    }
   }
 });
 

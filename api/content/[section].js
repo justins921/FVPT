@@ -1,5 +1,16 @@
+import { createRequire } from 'module';
 import { getContent, putContent, isValidSection } from '../../lib/supabase.js';
 import { verifyToken } from '../../lib/auth.js';
+
+// Fallback: serve from bundled JSON files if Supabase is unavailable
+const require = createRequire(import.meta.url);
+const fallback = {
+  general: require('../../src/content/general.json'),
+  home: require('../../src/content/home.json'),
+  about: require('../../src/content/about.json'),
+  services: require('../../src/content/services.json'),
+  contact: require('../../src/content/contact.json'),
+};
 
 export default async function handler(req, res) {
   const { section } = req.query;
@@ -10,8 +21,16 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'GET') {
-      const data = await getContent(section);
-      return res.json(data);
+      try {
+        const data = await getContent(section);
+        return res.json(data);
+      } catch {
+        // Supabase unavailable or empty — serve from local JSON
+        if (fallback[section]) {
+          return res.json(fallback[section]);
+        }
+        return res.status(500).json({ error: 'Content not found' });
+      }
     }
 
     if (req.method === 'PUT') {
